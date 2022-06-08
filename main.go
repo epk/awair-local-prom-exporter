@@ -106,7 +106,7 @@ func main() {
 		return nil
 	})
 
-	app.Logger.Info("Awair Poller started", zap.String("listen_address", listenString), zap.String("awair_address", app.AwairAddress), zap.Duration("poll_frequency", app.TimeBetweenChecks))
+	app.Logger.Info("Awair Poller started", zap.String("listen_address", listenString), zap.String("awair_address", app.AwairAddress), zap.String("poll_frequency", app.TimeBetweenChecks.String()))
 
 	<-_ctx.Done()
 	app.Logger.Info("Shutting down")
